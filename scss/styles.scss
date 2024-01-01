@@ -33,3 +33,87 @@
   right: 0;
   width: 24px;
 }
+
+// Video Play Button
+.video-play-button {
+  display: block;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: content-box;
+  width: 32px;
+  height: 44px;
+  padding: 1.125rem 1.25rem 1.125rem 1.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-play-button:before {
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  cursor: pointer;
+  content: "";
+  background: var(--bs-primary);
+  animation: pulse-border 1500ms ease-in-out infinite;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-play-button:after {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  content: "";
+  background: var(--bs-primary);
+  transition: all 200ms;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-play-button span {
+  display: block;
+  z-index: 3;
+  position: relative;
+  top: 6px;
+  left: 4px;
+  width: 0;
+  height: 0;
+  // Draw button
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 26px solid #fff;
+}
+
+@keyframes pulse-border {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+  }
+}
+
+.video-modal .modal-dialog {
+  max-width: 1150px;
+  margin-top: 20px;
+}
+
+.project-modals .modal-dialog {
+  max-width: 1150px;
+  margin-top: 130px;
+}
